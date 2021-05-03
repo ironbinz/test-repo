@@ -35,7 +35,7 @@ function variantSolid(props: Dict) {
     }
 
   const {
-    bg = `${c}.400`,
+    bg = `${c}.500`,
     color = 'white',
     hoverBg = `${c}.300`,
     activeBg = `${c}.600`,
@@ -101,21 +101,6 @@ function variantLink(props: Dict) {
   }
 }
 
-const outlineMono = (props: Dict) => {
-  const { theme } = props
-  const { colors } = theme
-
-  return {
-    color: colors.gray[900],
-    borderRadius: 'md',
-    border: `1px solid ${colors.gray[300]}`,
-
-    _hover: {
-      bg: colors.gray[100],
-    },
-  }
-}
-
 const variantUnstyled = {
   bg: 'none',
   color: 'inherit',
@@ -137,6 +122,7 @@ export const Button = {
   baseStyle: {
     fontWeight: 600,
     fontSize: '14px',
+    borderRadius: '16px',
   },
   sizes: {
     md: {

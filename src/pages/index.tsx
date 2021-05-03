@@ -6,8 +6,13 @@ const ChartView = () => {
   return (
     <Box>
       <Header />
-      <Box data-testid="main">
-        <Box data-testid="leftSidebar">leftSidebar</Box>
+      <Box
+        data-testid="main"
+        sx={{ display: 'grid', gridTemplateColumns: '470px 1fr 470px' }}
+      >
+        <Box data-testid="leftSidebar" sx={{}}>
+          leftSidebar
+        </Box>
         <Box>
           <Box>Chart</Box>
           <Box>Coin Info</Box>
