@@ -1,0 +1,17 @@
+{
+  "presets": [["next/babel"], ["@emotion/babel-preset-css-prop"]],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@/components": "./src/components",
+          "@/lib": "./src/lib",
+          "@/modules": "./src/modules",
+          "@/styles": "./src/styles",
+          "@/tests": "./tests"
+        }
+      }
+    ]
+  ]
+}
