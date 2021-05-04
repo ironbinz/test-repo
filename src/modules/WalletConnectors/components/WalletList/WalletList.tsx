@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
-import { ConnectorConfig, connectors } from './config'
+import { ConnectorConfig, connectors } from '../../constants'
 
 type Props = {
   onSelect: (connector: ConnectorConfig) => void
@@ -9,15 +9,12 @@ export const WalletList = (props: Props) => {
   const { onSelect } = props
 
   return (
-    <Box sx={{ borderRadius: '16px', bgColor: 'gray.700', p: '4' }}>
+    <Box sx={{ borderRadius: '16px', bgColor: 'gray.700', p: '6' }}>
       <Text
         sx={{
           fontSize: '20px',
           fontWeight: '700',
-          pb: '3',
-          mb: '3',
-          borderBottom: '1px solid',
-          borderColor: 'gray.600',
+          pb: '4',
         }}
       >
         Connect to a wallet

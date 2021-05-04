@@ -1,8 +1,5 @@
 import { createIcon } from '@chakra-ui/icons'
 import { Fragment } from 'react'
-import uniqueId from 'lodash/uniqueId'
-
-const id = uniqueId('svg')
 
 const Icon = createIcon({
   displayName: 'TrustWallet',
@@ -12,7 +9,7 @@ const Icon = createIcon({
   },
   path: (
     <Fragment>
-      <g clipPath={`url(#${id})`}>
+      <g clipPath={`url(#svg-2)`}>
         <path
           d="M48.0048 96.0097C74.5172 96.0097 96.0097 74.5172 96.0097 48.0048C96.0097 21.4925 74.5172 0 48.0048 0C21.4925 0 0 21.4925 0 48.0048C0 74.5172 21.4925 96.0097 48.0048 96.0097Z"
           fill="#3375BB"
@@ -23,7 +20,7 @@ const Icon = createIcon({
         />
       </g>
       <defs>
-        <clipPath id={id}>
+        <clipPath id="svg-3">
           <rect width="96" height="96" fill="white" />
         </clipPath>
       </defs>

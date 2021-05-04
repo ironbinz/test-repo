@@ -2,8 +2,11 @@ import { Box } from '@chakra-ui/react'
 
 import { Header } from '@/modules/Header'
 import { WalletConnectors } from '@/modules/WalletConnectors'
+import useEagerConnect from '@/modules/WalletConnectors/hooks/useEagerConnect'
 
 const ChartView = () => {
+  useEagerConnect()
+
   return (
     <Box>
       <Header />

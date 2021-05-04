@@ -1,17 +1,20 @@
-import { ConnectorNames } from '../../../../types'
-import Metamask from './icons/Metamask'
-import MathWallet from './icons/MathWallet'
-import TokenPocket from './icons/TokenPocket'
-import TrustWallet from './icons/TrustWallet'
-import WalletConnect from './icons/WalletConnect'
-import BinanceChain from './icons/BinanceChain'
-import SafePalWallet from './icons/SafePalWallet'
+import Metamask from './components/WalletList/icons/Metamask'
+import MathWallet from './components/WalletList/icons/MathWallet'
+import TokenPocket from './components/WalletList/icons/TokenPocket'
+import TrustWallet from './components/WalletList/icons/TrustWallet'
+import WalletConnect from './components/WalletList/icons/WalletConnect'
+import BinanceChain from './components/WalletList/icons/BinanceChain'
+import SafePalWallet from './components/WalletList/icons/SafePalWallet'
+
+import { ConnectorNames } from './types'
 
 export type ConnectorConfig = {
   title: string
   icon: any
   connectorId: ConnectorNames
 }
+
+export const connectorLocalStorageKey = 'connectorId'
 
 export const connectors: ConnectorConfig[] = [
   {

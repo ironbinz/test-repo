@@ -3,7 +3,7 @@ import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { BscConnector } from '@binance-chain/bsc-connector'
 import Web3 from 'web3'
 
-import { ConnectorNames } from '../types'
+import { ConnectorNames } from '@/modules/WalletConnectors/types'
 import getNodeUrl from './getRpcUrl'
 
 const chainIdEnv = process.env.NEXT_PUBLIC_CHAIN_ID || ''
