@@ -1,6 +1,7 @@
 import { Box } from '@chakra-ui/react'
 
 import { Header } from '@/modules/Header'
+import { WalletConnectors } from '@/modules/WalletConnectors'
 
 const ChartView = () => {
   return (
@@ -19,8 +20,9 @@ const ChartView = () => {
         </Box>
         <Box data-testid="rightSidebar">
           <Box data-testid="tradingList">
-            <Box>Trading History</Box>
-            <Box>tradingList</Box>
+            <Box>
+              <WalletConnectors />
+            </Box>
           </Box>
         </Box>
       </Box>
