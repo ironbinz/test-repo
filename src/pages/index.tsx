@@ -1,18 +1,16 @@
 import { Box } from '@chakra-ui/react'
 
-import { Header } from '@/modules/Header'
-import { WalletConnectors } from '@/modules/WalletConnectors'
-import useEagerConnect from '@/modules/WalletConnectors/hooks/useEagerConnect'
+import { MainLayout } from '@/modules/Layouts/MainLayout'
 
 const ChartView = () => {
-  useEagerConnect()
-
   return (
-    <Box>
-      <Header />
+    <MainLayout>
       <Box
         data-testid="main"
-        sx={{ display: 'grid', gridTemplateColumns: '470px 1fr 470px' }}
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { base: '1fr', md: '470px 1fr 470px' },
+        }}
       >
         <Box data-testid="leftSidebar" sx={{}}>
           leftSidebar
@@ -22,14 +20,10 @@ const ChartView = () => {
           <Box>Coin Info</Box>
         </Box>
         <Box data-testid="rightSidebar">
-          <Box data-testid="tradingList">
-            <Box>
-              <WalletConnectors />
-            </Box>
-          </Box>
+          <Box data-testid="tradingList">sidebar</Box>
         </Box>
       </Box>
-    </Box>
+    </MainLayout>
   )
 }
 

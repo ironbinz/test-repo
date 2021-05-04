@@ -18,7 +18,6 @@ import { connectorsByName } from '@/lib/web3React'
 import { setupNetwork } from '@/lib/wallet'
 
 const useAuth = () => {
-  // const dispatch = useAppDispatch()
   const { activate, deactivate } = useWeb3React()
   const toast = useToast()
 
@@ -43,6 +42,7 @@ const useAuth = () => {
               title: 'Provider Error',
               description: 'No provider was found.',
               status: 'error',
+              position: 'bottom-right',
               isClosable: true,
             })
           } else if (
@@ -58,6 +58,7 @@ const useAuth = () => {
               title: 'Authorization Error',
               description: 'Please authorize to access your account.',
               status: 'error',
+              position: 'bottom-right',
               isClosable: true,
             })
           } else {
@@ -65,6 +66,7 @@ const useAuth = () => {
               title: error.name,
               description: error.message,
               status: 'error',
+              position: 'bottom-right',
               isClosable: true,
             })
           }
@@ -83,7 +85,6 @@ const useAuth = () => {
 
   const logout = useCallback(() => {
     // dispatch(profileClear())
-    console.log('logout')
     deactivate()
   }, [deactivate])
 
