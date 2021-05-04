@@ -10,8 +10,9 @@ export const setupNetwork = async () => {
   const provider = (window as WindowChain).ethereum
   const chainIdEnv = process.env.NEXT_PUBLIC_CHAIN_ID || ''
 
-  if (provider) {
+  if (provider && provider.request) {
     const chainId = parseInt(chainIdEnv, 10)
+
     try {
       await provider.request({
         method: 'wallet_addEthereumChain',
@@ -55,19 +56,25 @@ export const registerToken = async (
   tokenSymbol: string,
   tokenDecimals: number,
   tokenImage: string,
-) => {
-  const tokenAdded = await (window as WindowChain).ethereum.request({
-    method: 'wallet_watchAsset',
-    params: {
-      type: 'ERC20',
-      options: {
-        address: tokenAddress,
-        symbol: tokenSymbol,
-        decimals: tokenDecimals,
-        image: tokenImage,
-      },
-    },
-  })
+): Promise<boolean> => {
+  const provider = (window as WindowChain).ethereum
 
-  return tokenAdded
+  if (provider && provider.request) {
+    const tokenAdded = await provider.request({
+      method: 'wallet_watchAsset',
+      params: {
+        type: 'ERC20',
+        options: {
+          address: tokenAddress,
+          symbol: tokenSymbol,
+          decimals: tokenDecimals,
+          image: tokenImage,
+        },
+      },
+    })
+
+    return !!tokenAdded
+  } else {
+    return false
+  }
 }

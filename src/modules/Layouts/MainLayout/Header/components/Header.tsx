@@ -29,7 +29,7 @@ export const Header = () => {
           <Box sx={{ maxW: '40px', mr: '4' }}>
             <Img src="/img/logo.png" sx={{ width: '100%' }} />
           </Box>
-          <Text sx={{ fontWeight: '700' }}>
+          <Text sx={{ fontWeight: '700', fontSize: '18px' }}>
             Moon{' '}
             <Text as="span" sx={{ color: 'brand.400' }}>
               Maker
