@@ -6,6 +6,7 @@ import { DefaultSeo } from 'next-seo'
 import { ErrorBoundary } from 'react-error-boundary'
 
 import { ThemeProvider } from '@/styles/ThemeProvider'
+import { AppProviders } from '@/modules/Providers/AppProviders'
 
 const Noop = ({ children }: any) => children
 
@@ -30,14 +31,16 @@ function MyApp(props: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        <DefaultSeo title="Moonmakerprotocol" titleTemplate="%s - MMP" />
-        <ErrorBoundary FallbackComponent={() => null}>
-          <Layout {...pageProps}>
-            <Component {...pageProps} />
-          </Layout>
-        </ErrorBoundary>
-      </ThemeProvider>
+      <AppProviders>
+        <ThemeProvider>
+          <DefaultSeo title="Moonmakerprotocol" titleTemplate="%s - MMP" />
+          <ErrorBoundary FallbackComponent={() => null}>
+            <Layout {...pageProps}>
+              <Component {...pageProps} />
+            </Layout>
+          </ErrorBoundary>
+        </ThemeProvider>
+      </AppProviders>
     </QueryClientProvider>
   )
 }
