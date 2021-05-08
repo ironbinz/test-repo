@@ -1,3 +1,5 @@
-import LotteryMainPage from '@/modules/Lottery/pages/LotteryMainPage'
+import { Box } from '@chakra-ui/react'
 
-export default LotteryMainPage
+export default () => {
+  return <Box></Box>
+}
