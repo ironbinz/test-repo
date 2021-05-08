@@ -3,11 +3,24 @@ import { Box, Button, Text, VStack, Img } from '@chakra-ui/react'
 export const HowItWorkSection = () => {
   return (
     <Box layerStyle="boxSection" sx={{ py: '12', mb: '12' }}>
-      <Box sx={{ display: 'grid', gridTemplateColumns: '420px 1fr' }}>
-        <Box sx={{ px: '6', pr: '12' }}>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { base: ' 1fr', lg: '420px 1fr' },
+        }}
+      >
+        <Box
+          sx={{
+            px: '6',
+            pr: '12',
+            maxWidth: { base: '300px', md: '400px', lg: '100%' },
+            mx: { base: 'auto', lg: '0' },
+            mb: { base: '6', lg: '0' },
+          }}
+        >
           <Img src="/img/character-4.png" />
         </Box>
-        <Box>
+        <Box sx={{ textAlign: { base: 'center', lg: 'left' } }}>
           <Text as="h2" textStyle="sectionTitle">
             How it works
           </Text>
@@ -21,7 +34,9 @@ export const HowItWorkSection = () => {
               3, or 4 of your ticket numbers match the winning numbers and their
               exact order!
             </Text>
-            <Button>Learn more</Button>
+            <Box sx={{ w: '100%' }}>
+              <Button>Learn more</Button>
+            </Box>
           </VStack>
         </Box>
       </Box>

@@ -35,7 +35,7 @@ function MyApp(props: AppProps) {
         <ThemeProvider>
           <DefaultSeo
             title="Moonmakerprotocol"
-            titleTemplate="%s |  The Moon Maker Protocol"
+            titleTemplate="%s | Moon Maker Protocol"
           />
           <ErrorBoundary FallbackComponent={() => null}>
             <Layout {...pageProps}>

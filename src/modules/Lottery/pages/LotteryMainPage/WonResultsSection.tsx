@@ -3,16 +3,25 @@ import { Grid, Img, Box, Text, HStack, VStack } from '@chakra-ui/react'
 
 export const WonResultsSection = () => {
   return (
-    <Box layerStyle="boxSection" sx={{ pb: '12' }}>
+    <Box
+      layerStyle="boxSection"
+      sx={{ pb: '12', px: { base: '4', sm: '6', md: '12' } }}
+    >
       <Box sx={{ textAlign: 'center', py: '6' }}>
         <Text textStyle="sectionTitle">Latest Winning Numbers</Text>
       </Box>
-      <Grid gridTemplateColumns="300px 1fr 300px">
-        <Box sx={{ px: '8' }}>
+      <Grid
+        gridTemplateColumns={{
+          base: '1fr',
+          lg: '1fr 300px',
+          xl: '300px 1fr 300px',
+        }}
+      >
+        <Box sx={{ px: '8', display: { base: 'none', xl: 'block' } }}>
           <Img src="/img/character-2.png" />
         </Box>
         <Box>
-          <HStack justify="center" spacing="6">
+          <HStack justify="center" spacing={{ base: '2', sm: '4', md: '6' }}>
             <NumberBox>12</NumberBox>
             <NumberBox>4</NumberBox>
             <NumberBox>8</NumberBox>
@@ -28,7 +37,7 @@ export const WonResultsSection = () => {
             <TicketMatchingItem matching="2" number={44} />
           </VStack>
         </Box>
-        <Box sx={{ px: '4' }}>
+        <Box sx={{ px: '4', display: { base: 'none', lg: 'block' } }}>
           <Img src="/img/character-3.png" />
         </Box>
       </Grid>
@@ -83,11 +92,11 @@ const NumberBox = (props: NumberBoxProps) => {
         justifyContent: 'center',
         bgColor: 'white',
         color: 'brand.800',
-        borderRadius: '24px',
+        borderRadius: { base: '20px', sm: '24px' },
         textAlign: 'center',
-        fontSize: '36px',
         p: '12px',
-        boxSize: '90px',
+        fontSize: { base: '20px', sm: '24px', lg: '36px' },
+        boxSize: { base: '60px', sm: '80px', lg: '90px' },
         fontWeight: '700',
       }}
     >

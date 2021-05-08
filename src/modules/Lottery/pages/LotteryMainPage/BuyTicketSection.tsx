@@ -7,9 +7,9 @@ export const BuyTicketSection = () => {
         <Box textStyle="sectionTitle" sx={{ color: 'brand.400' }}>
           Your tickets for this round
         </Box>
-        <Box>
+        <Box sx={{ minHeight: { base: '100px', lg: 'auto' } }}>
           <Text sx={{ fontSize: '52px', fontWeight: '700' }}>
-            32{' '}
+            0{' '}
             <Text as="span" sx={{ fontSize: '14px', fontWeight: '600' }}>
               Tickets
             </Text>
