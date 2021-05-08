@@ -4,6 +4,9 @@ import colors from './colors'
 import components from './components'
 
 const theme = extendTheme({
+  config: {
+    initialColorMode: 'dark',
+  },
   styles: {
     global: {
       body: {

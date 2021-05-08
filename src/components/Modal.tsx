@@ -27,7 +27,6 @@ export const Modal = (props: ModalProps) => {
       <ModalOverlay>
         <ModalContent
           sx={{
-            bgColor: 'gray.700',
             maxW: maxW,
             pb: '4',
             borderRadius: '16px',

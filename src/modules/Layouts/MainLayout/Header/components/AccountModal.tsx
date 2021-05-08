@@ -7,6 +7,7 @@ import {
   useClipboard,
   VStack,
   useToast,
+  useMediaQuery,
 } from '@chakra-ui/react'
 import { useWeb3React } from '@web3-react/core'
 import { ExternalLinkIcon, LinkIcon } from '@chakra-ui/icons'
@@ -14,6 +15,7 @@ import { VscDebugDisconnect } from 'react-icons/vsc'
 import useAuth from '@/modules/WalletConnectors/hooks/useAuth'
 import { Modal } from '@/components/Modal'
 import { connectorLocalStorageKey } from '@/modules/WalletConnectors/constants'
+import { useAccountEllipsis } from '@/modules/WalletConnectors/hooks/useAccountEllipsis'
 
 type AccountProps = {
   accountDisclosure: UseDisclosureReturn
@@ -25,6 +27,8 @@ export const AccountModal = (props: AccountProps) => {
   const { account } = useWeb3React()
   const { logout } = useAuth()
   const toast = useToast()
+  const accountEllipsis = useAccountEllipsis()
+  const [isLargerThan1024] = useMediaQuery('(min-width: 1024px)')
 
   const value = account || ''
   const { onCopy, hasCopied } = useClipboard(value)
@@ -46,7 +50,7 @@ export const AccountModal = (props: AccountProps) => {
               }),
             }}
           >
-            {account}
+            {isLargerThan1024 ? account : accountEllipsis}
           </Box>
           <Box
             sx={{ borderBottom: '1px solid', borderColor: 'gray.600', pb: '4' }}
@@ -61,8 +65,15 @@ export const AccountModal = (props: AccountProps) => {
             >
               View on BSC
             </Button>
-            <Button onClick={onCopy} variant="outline" rightIcon={<LinkIcon />}>
-              Copy Address
+            <Button
+              onClick={onCopy}
+              variant={hasCopied ? 'solid' : 'outline'}
+              rightIcon={<LinkIcon />}
+              sx={{
+                minW: '150px',
+              }}
+            >
+              {hasCopied ? 'Copied' : 'Copy Address'}
             </Button>
           </Box>
         </Box>

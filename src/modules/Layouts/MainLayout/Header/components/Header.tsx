@@ -1,4 +1,4 @@
-import { Box, Img, Text, useDisclosure } from '@chakra-ui/react'
+import { Box, Img, Text, useDisclosure, useMediaQuery } from '@chakra-ui/react'
 import { useWeb3React } from '@web3-react/core'
 
 import { LoginModal } from './LoginModal'
@@ -9,6 +9,7 @@ export const Header = () => {
   const { account } = useWeb3React()
   const loginDisclosure = useDisclosure()
   const accountDisclosure = useDisclosure()
+  const [isLargerThan640] = useMediaQuery('(min-width: 640px)')
 
   return (
     <Box
@@ -29,13 +30,15 @@ export const Header = () => {
           <Box sx={{ maxW: '40px', mr: '4' }}>
             <Img src="/img/logo.png" sx={{ width: '100%' }} />
           </Box>
-          <Text sx={{ fontWeight: '700', fontSize: '18px' }}>
-            Moon{' '}
-            <Text as="span" sx={{ color: 'brand.400' }}>
-              Maker
-            </Text>{' '}
-            Protocol
-          </Text>
+          {isLargerThan640 && (
+            <Text sx={{ fontWeight: '700', fontSize: '18px' }}>
+              Moon{' '}
+              <Text as="span" sx={{ color: 'brand.400' }}>
+                Maker
+              </Text>{' '}
+              Protocol
+            </Text>
+          )}
         </Box>
         <UserBlock
           account={account}

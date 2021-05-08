@@ -1,5 +1,6 @@
 import { Box, Button, UseDisclosureReturn } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
+import { useAccountEllipsis } from '@/modules/WalletConnectors/hooks/useAccountEllipsis'
 
 type UserBlockProps = {
   account?: string | null
@@ -9,10 +10,7 @@ type UserBlockProps = {
 
 export const UserBlock = (props: UserBlockProps) => {
   const { account, loginDisclosure, accountDisclosure } = props
-
-  const accountEllipsis = account
-    ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}`
-    : null
+  const accountEllipsis = useAccountEllipsis()
 
   return (
     <Box>

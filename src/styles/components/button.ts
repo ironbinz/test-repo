@@ -41,10 +41,10 @@ function variantSolid(props: Dict) {
     activeBg = `${c}.600`,
   } = accessibleColorMap[c] || {}
   return {
-    bg: mode(bg, `${c}.200`)(props),
+    bg: mode(bg, `${c}.500`)(props),
     border: '1px solid',
-    borderColor: mode(bg, `${c}.200`)(props),
-    color: mode(color, `gray.800`)(props),
+    borderColor: mode(bg, `${c}.500`)(props),
+    color: mode(color, `white`)(props),
     _hover: { bg: mode(hoverBg, `${c}.300`)(props) },
     _active: { bg: mode(activeBg, `${c}.400`)(props) },
   }
@@ -76,7 +76,7 @@ function variantGhost(props: Dict) {
   const darkActiveBg = transparentize(`${c}.200`, 0.24)(theme)
 
   return {
-    color: mode(`${c}.500`, `${c}.200`)(props),
+    color: mode(`${c}.500`, `${c}.500`)(props),
     bg: 'transparent',
     _hover: {
       bg: mode(`${c}.50`, darkHoverBg)(props),
@@ -93,7 +93,7 @@ function variantLink(props: Dict) {
     padding: 0,
     height: 'auto',
     lineHeight: 'normal',
-    color: mode(`${c}.500`, `${c}.200`)(props),
+    color: mode(`${c}.500`, `${c}.500`)(props),
     _hover: { textDecoration: 'underline' },
     _active: {
       color: mode(`${c}.700`, `${c}.500`)(props),
