@@ -2,12 +2,19 @@ import { extendTheme } from '@chakra-ui/react'
 
 import colors from './colors'
 import components from './components'
+import layerStyles from './layerStyles'
+import textStyles from './textStyles'
 
 const theme = extendTheme({
+  config: {
+    initialColorMode: 'dark',
+  },
   styles: {
     global: {
       body: {
-        bgColor: 'gray.800',
+        bgColor: '#1e2430',
+        fontFamily:
+          'Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
       },
       'html,body': {
         color: 'gray.50',
@@ -18,6 +25,8 @@ const theme = extendTheme({
       },
     },
   },
+  layerStyles,
+  textStyles,
   colors,
   components,
 })

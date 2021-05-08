@@ -35,16 +35,28 @@ function variantSolid(props: Dict) {
     }
 
   const {
-    bg = `${c}.400`,
+    bg = `${c}.500`,
     color = 'white',
     hoverBg = `${c}.300`,
     activeBg = `${c}.600`,
   } = accessibleColorMap[c] || {}
+
+  if (c === 'brand') {
+    return {
+      bg: mode(bg, `${c}.500`)(props),
+      border: '1px solid',
+      borderColor: mode(bg, `${c}.500`)(props),
+      color: mode(color, `${c}.800`)(props),
+      _hover: { bg: mode(hoverBg, `${c}.300`)(props) },
+      _active: { bg: mode(activeBg, `${c}.400`)(props) },
+    }
+  }
+
   return {
-    bg: mode(bg, `${c}.200`)(props),
+    bg: mode(bg, `${c}.500`)(props),
     border: '1px solid',
-    borderColor: mode(bg, `${c}.200`)(props),
-    color: mode(color, `gray.800`)(props),
+    borderColor: mode(bg, `${c}.500`)(props),
+    color: mode(color, `white`)(props),
     _hover: { bg: mode(hoverBg, `${c}.300`)(props) },
     _active: { bg: mode(activeBg, `${c}.400`)(props) },
   }
@@ -76,7 +88,7 @@ function variantGhost(props: Dict) {
   const darkActiveBg = transparentize(`${c}.200`, 0.24)(theme)
 
   return {
-    color: mode(`${c}.500`, `${c}.200`)(props),
+    color: mode(`${c}.500`, `${c}.500`)(props),
     bg: 'transparent',
     _hover: {
       bg: mode(`${c}.50`, darkHoverBg)(props),
@@ -93,25 +105,10 @@ function variantLink(props: Dict) {
     padding: 0,
     height: 'auto',
     lineHeight: 'normal',
-    color: mode(`${c}.500`, `${c}.200`)(props),
+    color: mode(`${c}.500`, `${c}.500`)(props),
     _hover: { textDecoration: 'underline' },
     _active: {
       color: mode(`${c}.700`, `${c}.500`)(props),
-    },
-  }
-}
-
-const outlineMono = (props: Dict) => {
-  const { theme } = props
-  const { colors } = theme
-
-  return {
-    color: colors.gray[900],
-    borderRadius: 'md',
-    border: `1px solid ${colors.gray[300]}`,
-
-    _hover: {
-      bg: colors.gray[100],
     },
   }
 }
@@ -137,6 +134,7 @@ export const Button = {
   baseStyle: {
     fontWeight: 600,
     fontSize: '14px',
+    borderRadius: '16px',
   },
   sizes: {
     md: {
@@ -149,5 +147,6 @@ export const Button = {
   variants,
   defaultProps: {
     colorScheme: 'brand',
+    size: 'lg',
   },
 }
