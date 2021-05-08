@@ -33,7 +33,10 @@ function MyApp(props: AppProps) {
     <QueryClientProvider client={queryClient}>
       <AppProviders>
         <ThemeProvider>
-          <DefaultSeo title="Moonmakerprotocol" titleTemplate="%s - MMP" />
+          <DefaultSeo
+            title="Moonmakerprotocol"
+            titleTemplate="%s |  The Moon Maker Protocol"
+          />
           <ErrorBoundary FallbackComponent={() => null}>
             <Layout {...pageProps}>
               <Component {...pageProps} />

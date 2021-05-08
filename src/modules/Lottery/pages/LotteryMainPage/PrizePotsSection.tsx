@@ -23,7 +23,7 @@ export const PrizePotsSection = () => {
             Total Pot
           </Text>
           <Text sx={{ fontSize: '28px', fontWeight: '700', lineHeight: '1.2' }}>
-            82,104 MMP
+            73,625 MMP
           </Text>
         </Box>
       </Grid>
@@ -36,30 +36,38 @@ export const PrizePotsSection = () => {
             Prize Pot
           </Box>
         </Flex>
-        <PrizePotItem matchingText="4" prizePot="10,085" />
-        <PrizePotItem matchingText="3" prizePot="2,085" />
-        <PrizePotItem matchingText="2" prizePot="43,085" />
+        <PrizePotItem prize="1" matchingText="4" prizePot="40,085" />
+        <PrizePotItem prize="2" matchingText="3" prizePot="20,120" />
+        <PrizePotItem prize="3" matchingText="2" prizePot="10,100" />
       </Box>
       <Box sx={{ pt: '6' }}>
-        The remaining MMP tokens in prizepot will be automatically transferred
-        to the next Lotto event.
+        The remaining{' '}
+        <Text as="span" color="brand.400">
+          3,320
+        </Text>{' '}
+        MMP tokens in prizepot will be automatically transferred to the next
+        Lotto event.
       </Box>
     </Box>
   )
 }
 
 type PrizePotItemItemProps = {
+  prize: string
   prizePot: string
   matchingText: string
 }
 
 export const PrizePotItem = (props: PrizePotItemItemProps) => {
-  const { matchingText, prizePot } = props
+  const { prize, matchingText, prizePot } = props
+
+  const isFirstPrize = prize === '1'
 
   return (
     <Flex
       sx={{
         justifyContent: 'space-between',
+        alignItems: 'center',
         borderBottom: '1px solid',
         borderColor: 'gray.700',
         px: '4',
@@ -67,9 +75,17 @@ export const PrizePotItem = (props: PrizePotItemItemProps) => {
         '&:hover': {
           bgColor: 'gray.800',
         },
+
+        ...(isFirstPrize && {
+          fontSize: '20px',
+          fontWeight: '600',
+        }),
       }}
     >
-      <Box>{matchingText}</Box>
+      <Grid gridTemplateColumns="24px 1fr" gap="4" alignItems="center">
+        <Img src={`/img/prize-${prize}.png`} />
+        <Text>{matchingText}</Text>
+      </Grid>
       <Box sx={{ textAlign: 'right' }}>{prizePot} MMP</Box>
     </Flex>
   )

@@ -1,30 +1,37 @@
 import { ReactNode } from 'react'
-import { Box, Text, HStack, VStack } from '@chakra-ui/react'
+import { Grid, Img, Box, Text, HStack, VStack } from '@chakra-ui/react'
 
 export const WonResultsSection = () => {
   return (
-    <Box layerStyle="boxSection">
-      <Box sx={{ textAlign: 'center', pb: '4' }}>
+    <Box layerStyle="boxSection" sx={{ pb: '12' }}>
+      <Box sx={{ textAlign: 'center', py: '6' }}>
         <Text textStyle="sectionTitle">Latest Winning Numbers</Text>
       </Box>
-      <Box>
-        <HStack justify="center" spacing="6">
-          <NumberBox>12</NumberBox>
-          <NumberBox>4</NumberBox>
-          <NumberBox>8</NumberBox>
-          <NumberBox>22</NumberBox>
-        </HStack>
-        <VStack
-          spacing="3"
-          alignItems="flex-start"
-          sx={{ maxW: '420px', mx: 'auto', mt: '6' }}
-        >
-          <TicketMatchingItem matching="4" number={2} />
-          <TicketMatchingItem matching="3" number={5} />
-          <TicketMatchingItem matching="2" number={4} />
-          <TicketMatchingItem matching="1" number={10} />
-        </VStack>
-      </Box>
+      <Grid gridTemplateColumns="300px 1fr 300px">
+        <Box sx={{ px: '8' }}>
+          <Img src="/img/character-2.png" />
+        </Box>
+        <Box>
+          <HStack justify="center" spacing="6">
+            <NumberBox>12</NumberBox>
+            <NumberBox>4</NumberBox>
+            <NumberBox>8</NumberBox>
+            <NumberBox>22</NumberBox>
+          </HStack>
+          <VStack
+            spacing="3"
+            alignItems="flex-start"
+            sx={{ maxW: '420px', mx: 'auto', mt: '6' }}
+          >
+            <TicketMatchingItem matching="4" number={2} />
+            <TicketMatchingItem matching="3" number={15} />
+            <TicketMatchingItem matching="2" number={44} />
+          </VStack>
+        </Box>
+        <Box sx={{ px: '4' }}>
+          <Img src="/img/character-3.png" />
+        </Box>
+      </Grid>
     </Box>
   )
 }

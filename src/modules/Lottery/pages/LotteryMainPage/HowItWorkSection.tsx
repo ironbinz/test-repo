@@ -1,16 +1,18 @@
-import { Box, Button, Text, VStack } from '@chakra-ui/react'
+import { Box, Button, Text, VStack, Img } from '@chakra-ui/react'
 
 export const HowItWorkSection = () => {
   return (
-    <Box layerStyle="boxSection">
-      <Box sx={{ display: 'grid', gridTemplateColumns: '380px 1fr' }}>
-        <Box>Logo</Box>
+    <Box layerStyle="boxSection" sx={{ py: '12', mb: '12' }}>
+      <Box sx={{ display: 'grid', gridTemplateColumns: '420px 1fr' }}>
+        <Box sx={{ px: '6', pr: '12' }}>
+          <Img src="/img/character-4.png" />
+        </Box>
         <Box>
           <Text as="h2" textStyle="sectionTitle">
             How it works
           </Text>
-          <VStack spacing="4" align="flex-start">
-            <Text>
+          <VStack spacing="8" align="flex-start">
+            <Text sx={{ fontSize: '18px' }}>
               Spend{' '}
               <Text as="span" textStyle="highlightText">
                 MMP

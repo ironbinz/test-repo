@@ -16,7 +16,7 @@ export const BuyTicketSection = () => {
           </Text>
         </Box>
       </Box>
-      <VStack spacing="4">
+      <VStack spacing="6">
         <Button
           variant="outline"
           isFullWidth
