@@ -35,7 +35,7 @@ function baseStyleDialog(props: Dict) {
 
   return {
     borderRadius: 'md',
-    bg: mode('white', 'gray.700')(props),
+    bg: mode('white', 'gray.800')(props),
     color: 'inherit',
     my: '3.75rem',
     zIndex: 'modal',

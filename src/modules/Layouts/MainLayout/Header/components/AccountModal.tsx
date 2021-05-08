@@ -36,11 +36,13 @@ export const AccountModal = (props: AccountProps) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose} maxW="560px">
       <VStack sx={{ textAlign: 'center', py: '6' }} spacing="4">
-        <Text sx={{ fontSize: '24px', fontWeight: '600' }}>Your Wallet</Text>
+        <Text sx={{ fontSize: '24px', fontWeight: '700', color: 'brand.400' }}>
+          Your Wallet
+        </Text>
         <Box sx={{ px: '6' }}>
           <Box
             sx={{
-              bgColor: 'gray.800',
+              bgColor: 'gray.900',
               borderRadius: '16px',
               px: '6',
               py: '2',

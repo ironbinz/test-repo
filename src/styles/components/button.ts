@@ -40,6 +40,18 @@ function variantSolid(props: Dict) {
     hoverBg = `${c}.300`,
     activeBg = `${c}.600`,
   } = accessibleColorMap[c] || {}
+
+  if (c === 'brand') {
+    return {
+      bg: mode(bg, `${c}.500`)(props),
+      border: '1px solid',
+      borderColor: mode(bg, `${c}.500`)(props),
+      color: mode(color, `${c}.800`)(props),
+      _hover: { bg: mode(hoverBg, `${c}.300`)(props) },
+      _active: { bg: mode(activeBg, `${c}.400`)(props) },
+    }
+  }
+
   return {
     bg: mode(bg, `${c}.500`)(props),
     border: '1px solid',
@@ -135,5 +147,6 @@ export const Button = {
   variants,
   defaultProps: {
     colorScheme: 'brand',
+    size: 'lg',
   },
 }
