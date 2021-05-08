@@ -23,7 +23,7 @@ export const PrizePotsSection = () => {
             Total Pot
           </Text>
           <Text sx={{ fontSize: '28px', fontWeight: '700', lineHeight: '1.2' }}>
-            73,625 MMP
+            1,000,000 MMP
           </Text>
         </Box>
       </Grid>
@@ -36,14 +36,14 @@ export const PrizePotsSection = () => {
             Prize Pot
           </Box>
         </Flex>
-        <PrizePotItem prize="1" matchingText="4" prizePot="40,085" />
-        <PrizePotItem prize="2" matchingText="3" prizePot="20,120" />
-        <PrizePotItem prize="3" matchingText="2" prizePot="10,100" />
+        <PrizePotItem prize="1" matchingText="4" prizePot="750,000" />
+        <PrizePotItem prize="2" matchingText="3" prizePot="150,000" />
+        <PrizePotItem prize="3" matchingText="2" prizePot="100,000" />
       </Box>
       <Box sx={{ pt: '6' }}>
         The remaining{' '}
         <Text as="span" color="brand.400">
-          3,320
+          10,000
         </Text>{' '}
         MMP tokens in prizepot will be automatically transferred to the next
         Lotto event.

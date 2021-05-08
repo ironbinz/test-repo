@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import {
   Box,
   Img,
@@ -41,14 +42,28 @@ export const Header = () => {
             </LinkOverlay>
           </Box>
           {isLargerThan640 && (
-            <Text sx={{ fontWeight: '700', fontSize: '18px' }}>
-              Moon{' '}
-              <Text as="span" sx={{ color: 'brand.400' }}>
-                Maker
-              </Text>{' '}
-              Protocol
-            </Text>
+            <Fragment>
+              <Text sx={{ fontWeight: '700', fontSize: '18px', mr: '2' }}>
+                Moon{' '}
+                <Text as="span" sx={{ color: 'brand.400' }}>
+                  Maker
+                </Text>{' '}
+                Protocol
+              </Text>
+            </Fragment>
           )}
+          <Box
+            sx={{
+              border: '1px solid',
+              borderColor: 'brand.400',
+              borderRadius: '8px',
+              p: '2px 4px',
+
+              fontSize: '13px',
+            }}
+          >
+            <Text sx={{ color: 'brand.400' }}>Beta</Text>
+          </Box>
         </LinkBox>
         <UserBlock
           account={account}

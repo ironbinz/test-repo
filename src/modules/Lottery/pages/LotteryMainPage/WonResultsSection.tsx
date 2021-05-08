@@ -25,7 +25,7 @@ export const WonResultsSection = () => {
             <NumberBox>12</NumberBox>
             <NumberBox>4</NumberBox>
             <NumberBox>8</NumberBox>
-            <NumberBox>22</NumberBox>
+            <NumberBox>16</NumberBox>
           </HStack>
           <VStack
             spacing="3"
@@ -34,7 +34,7 @@ export const WonResultsSection = () => {
           >
             <TicketMatchingItem matching="4" number={2} />
             <TicketMatchingItem matching="3" number={15} />
-            <TicketMatchingItem matching="2" number={44} />
+            <TicketMatchingItem matching="2" number={240} />
           </VStack>
         </Box>
         <Box sx={{ px: '4', display: { base: 'none', lg: 'block' } }}>
