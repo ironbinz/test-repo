@@ -8,15 +8,29 @@ import { WonResultsSection } from './WonResultsSection'
 import { BuyTicketSection } from './BuyTicketSection'
 import { PrizePotsSection } from './PrizePotsSection'
 import { CommingSoonSection } from './CommingSoonSection'
+import { Footer } from './Footer'
 
-NextSeo
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL
+const description = `Decentralized Token Launch Platform MMP will bring very high yield investment for the investors and the new selected high growth potential tokens executively for our holders, Airdrop, and many more features`
+
 const LotteryMainPage = () => {
   return (
     <Fragment>
       <NextSeo
         title="Lottery"
-        description="Decentralized Token Launch Platform
-        MMP will bring very high yield investment for the investors and the new selected high growth potential tokens executively for our holders, Airdrop, and many more features"
+        description={description}
+        openGraph={{
+          url: APP_URL,
+          title: 'Lottery | Moon Maker Protocol',
+          description: description,
+          images: [{ url: `${APP_URL}/img/mmp-lotttery-fb-og` }],
+          site_name: 'Moon Maker Protocol',
+        }}
+        twitter={{
+          handle: '@moonmakerpro',
+          site: '@moonmakerpro',
+          cardType: `${APP_URL}/img/mmp-lotttery-fb-og`,
+        }}
       />
       <MainLayout>
         <Container>
@@ -35,6 +49,7 @@ const LotteryMainPage = () => {
             </Grid>
 
             <HowItWorkSection />
+            <Footer />
           </Grid>
         </Container>
       </MainLayout>

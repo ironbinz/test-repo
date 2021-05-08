@@ -2,7 +2,7 @@ import { Box, Button, Text, VStack, Img } from '@chakra-ui/react'
 
 export const HowItWorkSection = () => {
   return (
-    <Box layerStyle="boxSection" sx={{ py: '12', mb: '12' }}>
+    <Box layerStyle="boxSection" sx={{ py: '12' }}>
       <Box
         sx={{
           display: 'grid',
