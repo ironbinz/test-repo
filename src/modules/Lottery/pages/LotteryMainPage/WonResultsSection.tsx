@@ -74,7 +74,7 @@ const NumberBox = (props: NumberBoxProps) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        bgColor: 'brand.300',
+        bgColor: 'white',
         color: 'brand.800',
         borderRadius: '24px',
         textAlign: 'center',

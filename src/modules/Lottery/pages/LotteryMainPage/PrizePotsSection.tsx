@@ -40,6 +40,10 @@ export const PrizePotsSection = () => {
         <PrizePotItem matchingText="3" prizePot="2,085" />
         <PrizePotItem matchingText="2" prizePot="43,085" />
       </Box>
+      <Box sx={{ pt: '6' }}>
+        The remaining MMP tokens in prizepot will be automatically transferred
+        to the next Lotto event.
+      </Box>
     </Box>
   )
 }
