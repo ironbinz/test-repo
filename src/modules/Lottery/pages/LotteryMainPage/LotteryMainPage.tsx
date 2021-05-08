@@ -23,7 +23,7 @@ const LotteryMainPage = () => {
           url: APP_URL,
           title: 'Lottery | Moon Maker Protocol',
           description: description,
-          images: [{ url: `${APP_URL}/img/mmp-lotttery-fb-og` }],
+          images: [{ url: `${APP_URL}/img/mmp-lotttery-fb-og.jpg` }],
           site_name: 'Moon Maker Protocol',
         }}
         twitter={{
